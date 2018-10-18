@@ -12,7 +12,13 @@ function getSearchTerm()
     }
 }
 
-$(document).ready(function() {    
+$(document).ready(function() {
+    // site navigation
+    if (!window.grvlib) {
+      new grvlib.TopNav();
+      new grvlib.SecondaryNav();
+    }
+
     // Highlight.js
     hljs.initHighlightingOnLoad();
     $('table').addClass('table table-striped table-hover');
