@@ -99,16 +99,16 @@ def generate_ssh_cfg(cluster, ssh_key=None):
     return ssh_cfg_template.format(bastion=bastion, ssh_key_path=ssh_key_path, identity_file=identity_file)
 
 if args.cluster is None:
-    print "env.py: error: provide --cluster either explicitly or by setting TF_VAR_cluster_name variable"
+    print ("env.py: error: provide --cluster either explicitly or by setting TF_VAR_cluster_name variable")
     exit(255)
 
 if args.list:
-    print generate_inventory(args.cluster)
+    print (generate_inventory(args.cluster))
 elif args.ssh:
     with open('ssh.config', 'w') as f:
         out =  generate_ssh_cfg(args.cluster, args.ssh_key)
         f.write(out)
-    print "generated file ./ssh.config"
+    print ("generated file ./ssh.config")
 
 
 

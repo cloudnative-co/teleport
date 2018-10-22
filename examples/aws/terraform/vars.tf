@@ -6,7 +6,7 @@ variable "region" {
 // Script creates a separate VPC with demo deployment
 variable "vpc_cidr" {
   type = "string"
-  default = "172.31.0.0/16"
+  default = "10.255.0.0/16"
 }
 
 // Teleport cluster name to set up
@@ -28,19 +28,19 @@ variable "teleport_uid" {
 // Instance types used for authentication servers auto scale groups
 variable "auth_instance_type" {
   type = "string"
-  default = "m4.large"
+  default = "t2.micro"
 }
 
 // Instance types used for proxy auto scale groups
 variable "proxy_instance_type" {
   type = "string"
-  default = "m4.large"
+  default = "t2.small"
 }
 
 // Instance types used for teleport nodes auto scale groups
 variable "node_instance_type" {
   type = "string"
-  default = "t2.medium"
+  default = "t2.nano"
 }
 
 // SSH key name to provision instances withx
@@ -136,7 +136,7 @@ variable "grafana_version" {
 // Instance types used for proxy auto scale groups
 variable "monitor_instance_type" {
   type = "string"
-  default = "m4.large"
+  default = "t2.micro"
 }
 
 // Password for grafana admin user

@@ -59,7 +59,7 @@ resource "aws_launch_configuration" "proxy" {
   instance_type               = "${var.proxy_instance_type}"
   user_data                   = "${data.template_file.proxy_user_data.rendered}"
   key_name                    = "${var.key_name}"
-  ebs_optimized               = true
+  ebs_optimized               = false
   associate_public_ip_address = true
   security_groups             = ["${aws_security_group.proxy.id}"]
   iam_instance_profile        = "${aws_iam_instance_profile.proxy.id}"

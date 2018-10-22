@@ -63,7 +63,7 @@ resource "aws_launch_configuration" "auth" {
   instance_type               = "${var.auth_instance_type}"
   user_data                   = "${data.template_file.auth_user_data.rendered}"
   key_name                    = "${var.key_name}"
-  ebs_optimized               = true
+  ebs_optimized               = false
   associate_public_ip_address = false
   security_groups             = ["${aws_security_group.auth.id}"]
   iam_instance_profile        = "${aws_iam_instance_profile.auth.id}"

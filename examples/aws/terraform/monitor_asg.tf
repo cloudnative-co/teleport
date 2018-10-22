@@ -51,7 +51,7 @@ resource "aws_launch_configuration" "monitor" {
   instance_type               = "${var.monitor_instance_type}"
   user_data                   = "${data.template_file.monitor_user_data.rendered}"
   key_name                    = "${var.key_name}"
-  ebs_optimized               = true
+  ebs_optimized               = false
   associate_public_ip_address = true
   security_groups             = ["${aws_security_group.monitor.id}"]
   iam_instance_profile        = "${aws_iam_instance_profile.monitor.id}"
